@@ -58,7 +58,7 @@ else
     private int peopleFound;
     protected override async Task OnInitializedAsync()
     {
-        people = await PersonService.GetPeopleAsync();
+        people = await PersonService.GetPeopleAsync(DateTime.Now);
         peopleFound = people.Length;
     }
 }
