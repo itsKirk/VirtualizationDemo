@@ -1,0 +1,64 @@
+﻿@page "/get-people"
+
+<PageTitle>People list</PageTitle>
+
+@using DummyBlazorServerApp.Data
+@inject PersonService PersonService
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>People List</h3>
+        </div>
+        <div class="col">
+            <h3>Total: <span style="font-weight:bold">@peopleFound</span> </h3>
+        </div>
+        <div class="col">
+            <h3>Males:<span style="font-weight:bold"> @people?.Where(x=>x.Gender == Gender.Male).Count()</span></h3>
+        </div>
+        <div class="col">
+            <h3>Females:<span style="font-weight:bold"> @people?.Where(x=>x.Gender == Gender.Female).Count()</span></h3>
+        </div>
+        <div class="col">
+            <h3>Other:<span style="font-weight:bold"> @people?.Where(x=>x.Gender == Gender.Other).Count()</span></h3>
+        </div>
+    </div>
+</div>
+
+@if (people == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Person Id</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items=@people Context=person>
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.Name</td>
+                    <td>@person.Gender</td>
+                    <td>@person.Age</td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+
+@code {
+    private Person[]? people;
+    private int peopleFound;
+    protected override async Task OnInitializedAsync()
+    {
+        people = await PersonService.GetPeopleAsync();
+        peopleFound = people.Length;
+    }
+}
