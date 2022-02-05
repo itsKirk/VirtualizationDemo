@@ -1,3 +1,5 @@
+using BlazorLibrary.Models;
+
 namespace DummyBlazorServerApp.Data
 {
     public class WeatherForecastService

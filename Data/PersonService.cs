@@ -1,4 +1,6 @@
-﻿namespace DummyBlazorServerApp.Data
+﻿using BlazorLibrary.Models;
+
+namespace DummyBlazorServerApp.Data
 {
     public class PersonService 
     {

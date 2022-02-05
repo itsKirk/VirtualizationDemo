@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "DummyBlazorServerApp/1.0.0": {
+        "dependencies": {
+          "BlazorLibrary": "1.0.0"
+        },
         "runtime": {
           "DummyBlazorServerApp.dll": {}
+        }
+      },
+      "BlazorLibrary/1.0.0": {
+        "runtime": {
+          "BlazorLibrary.dll": {}
         }
       }
     }
   },
   "libraries": {
     "DummyBlazorServerApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlazorLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "BlazorLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BlazorLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlazorLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BlazorLibrary/1.0.0": {
+      "type": "project",
+      "path": "../BlazorLibrary/BlazorLibrary.csproj",
+      "msbuildProject": "../BlazorLibrary/BlazorLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "BlazorLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Kirk\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Kirk\\source\\repos\\DummyBlazorServerApp\\BlazorLibrary\\BlazorLibrary.csproj": {
+              "projectPath": "C:\\Users\\Kirk\\source\\repos\\DummyBlazorServerApp\\BlazorLibrary\\BlazorLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

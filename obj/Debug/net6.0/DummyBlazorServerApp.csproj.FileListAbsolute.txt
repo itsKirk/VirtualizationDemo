@@ -25,3 +25,6 @@ C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\obj\Debug\n
 C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\obj\Debug\net6.0\ref\DummyBlazorServerApp.dll
 C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\obj\Debug\net6.0\DummyBlazorServerApp.pdb
 C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\obj\Debug\net6.0\DummyBlazorServerApp.genruntimeconfig.cache
+C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\bin\Debug\net6.0\BlazorLibrary.dll
+C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\bin\Debug\net6.0\BlazorLibrary.pdb
+C:\Users\Kirk\source\repos\DummyBlazorServerApp\DummyBlazorServerApp\obj\Debug\net6.0\DummyBlazorServerApp.csproj.CopyComplete
