@@ -1,0 +1,58 @@
+﻿@page "/get-cars"
+@using BlazorLibrary.Models
+
+<PageTitle>Car list</PageTitle>
+
+@using DummyBlazorServerApp.Data
+@inject CarService CarService
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Car List</h3>
+        </div>
+        <div class="col">
+            <h3>Total Cars: @cars?.Count</h3>
+        </div>
+    </div>
+</div>
+
+@if (cars == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Car Id</th>
+                <th>Car Make</th>
+                <th>Car Model</th>
+                <th>Year</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items=@cars Context=car>
+                <tr>
+                    <td>@car.Id</td>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Color</td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Car>? cars;
+    private int carsFound;
+    protected override async Task OnInitializedAsync()
+    {
+        cars = await CarService.GetCarsAsync();
+        carsFound = cars.Count;
+    }
+}

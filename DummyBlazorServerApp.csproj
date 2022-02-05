@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorLibrary\BlazorLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
