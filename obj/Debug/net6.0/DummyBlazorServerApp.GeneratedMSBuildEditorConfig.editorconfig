@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVvcGxlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Kirk/source/repos/DummyBlazorServerApp/DummyBlazorServerApp/Pages/Phones.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhvbmVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Kirk/source/repos/DummyBlazorServerApp/DummyBlazorServerApp/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

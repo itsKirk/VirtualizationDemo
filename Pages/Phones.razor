@@ -1,0 +1,56 @@
+﻿@page "/get-phones"
+@using BlazorLibrary.Models
+
+<PageTitle>Car list</PageTitle>
+
+@using DummyBlazorServerApp.Data
+@inject PhoneService PhoneService
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Phones List</h3>
+        </div>
+        <div class="col">
+            <h3>Total Phones: @phones?.Count</h3>
+        </div>
+    </div>
+</div>
+
+@if (phones == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Phone Id</th>
+                <th>Phone Model</th>
+                <th>Color</th>
+                <th>Operating System</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items=@phones Context=car>
+                <tr>
+                    <td>@car.Id</td>
+                    <td>@car.Model</td>
+                    <td>@car.Color</td>
+                    <td>@car.OS</td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Phone>? phones;
+    private int carsFound;
+    protected override async Task OnInitializedAsync()
+    {
+        phones = await PhoneService.GetPhonesAsync();
+        carsFound = phones.Count;
+    }
+}
